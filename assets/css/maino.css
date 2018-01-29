@@ -1,0 +1,65 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.btn {
+  padding: 0.75em 2.25em;
+  color: white;
+  background-color: #33ccff;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.btn:active {
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
+}
+.btn:focus {
+  outline-color: #33ccff;
+}
+.btn:hover {
+  background-color: deepskyblue;
+}
+
+.btn-sm {
+  padding: 0.375em 1.125em;
+  font-size: 0.75em;
+  letter-spacing: 0.01875em;
+}
+
+
+
+.loader {
+  margin: auto;
+  width: 40px;
+  height: 40px;
+  border: 6px solid transparent;
+  border-top-color: deepskyblue;
+  border-right-color: deepskyblue;
+  border-bottom-color: deepskyblue;
+  border-radius: 100%;
+  -webkit-animation: spin 0.4s linear infinite;
+          animation: spin 0.4s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
