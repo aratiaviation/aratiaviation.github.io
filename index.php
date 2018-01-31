@@ -619,8 +619,8 @@ for(event of eventList) {
 	<script>
 		jQuery(document).ready(function($){
 	//set your google maps parameters
-	var $latitude = 22.9121454,
-		$longitude = 88.4238022,
+	var $latitude = 22.906536;
+		$longitude = 88.4103942;
 		$map_zoom = 14;
 
 	//google map custom marker icon - .png fallback for IE11
