@@ -328,7 +328,7 @@ candidates as per their requirements and qualification in Airport/Airlines/Hospi
 	</footer>
 	<a href="#five" class="goto-next scrolly">Next</a>
 </section>
-<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0yr5y_6W4ZfImQGX27ySTRa4eCUFfD1c"></script>
 
 			<!-- Five -->
 				<section id="five" class="wrapper style2 special fade">
