@@ -1,0 +1,294 @@
+<html>
+<head>
+<title>Gallery</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<style type="text/css">
+#sq,#lg-sq,#thumb,#small,#mid,#ori {
+width: 100%
+}
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="stylesheet" href="assets/css/gal.css" />
+<script>
+var apiurl,myresult,apiurl_size,selected_size;
+apiurl = "https://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=27a28860e4aa57000d3a8d484e8e46e4&user_id=155221122@N07&per_page=10&format=json&nojsoncallback=1";
+
+
+
+
+
+selected_size=640;
+$('#sq,#lg-sq,#thumb,#small,#mid,#ori').attr("disabled", true);
+$('#button').removeAttr('disabled');
+
+
+$.getJSON(apiurl,function(json){
+$.each(json.photos.photo,function(i,myresult){
+apiurl_size = "https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=27a28860e4aa57000d3a8d484e8e46e4&photo_id="+myresult.id+"&format=json&nojsoncallback=1";
+$.getJSON(apiurl_size,function(size){
+$.each(size.sizes.size,function(i,myresult_size){
+if(myresult_size.width==selected_size){
+$("#boximage").append('<a href="'+myresult_size.source+'" target="_blank" ><img src="'+myresult_size.source+'"/></a>');
+}
+})
+})
+});
+});
+
+</script>
+</head>
+<body>
+<div id="page-wrapper">
+<!-- Header -->
+				<header id="header">
+					<h1 id="logo"><a href="index.html"><b>Arati Aviation</b></a></h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li>
+								<a href="./about.html">About</a>
+								<ul>
+									<li><a href="./about.html#values">Our Values</a></li>
+									<li><a href="./about.html#mission">Mission Statement</a></li>
+									
+									
+								</ul>
+							</li>
+							<li>
+								<a href="./services.html">Services</a>
+								<ul>
+									<li><a href="./services.html#placement">Placement</a></li>
+									<li><a href="./services.html#training">Training</a></li>
+									<li><a href="./services.html#training">Cabin Crew</a></li>
+									<li><a href="./services.html#training">Ground Handeling</a></li>
+									<li><a href="./services.html#training">Airlines CSA</a></li>
+									<li><a href="./services.html#training">Retail</a></li>
+									
+									
+								</ul>
+							</li>
+							<li>
+								<a href="#">Gallery</a>
+								<ul>
+								<li><a href="#photo" class="scrolly">Images</a></li>
+									<li><a href="#video" class="scrolly">Videos</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Career</a>
+								
+							</li>
+							<li><a href="./contact.html">Contact Us</a></li>
+							<li><a href="#" class="button special">Registration</a></li>
+						</ul>
+					</nav>
+				</header>
+				<!-- Main -->
+				<div id="main" class="wrapper style1" >
+<div class="container">
+<header class="major" >
+							
+							<img src="images/aratiaviation.png" height="140" >
+							<h2>Gallery</h2>
+							<p></p>
+						</header>
+
+
+						<section style="position:relative" id= "photo">
+						<h3>Photos</h3>
+						<div id="boximage" class="boximage">
+        
+		<div class="clear"></div><a></a><a></a><a></a><a></a><a></a><a></a>
+    </div>
+						</section>
+						<br>
+						<br>
+						<section id="video">
+						<h3>Videos</h3>
+						<div style="width:100%; text-align:center"><a href="#" class="button ">Visit Our Youtube Channel</a>
+						</section>
+</div>
+</div>
+<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						
+						<li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; 2018 Arati Aviation, All rights reserved.</li><li><a href="./terms.html">Terms and Conditions</a></li><li><a href="#modal-one">Credits</a></li>
+					</ul>
+				</footer>
+				</div>
+				<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+			<script>
+			(function () {
+    'use strict';
+    ////////////////////////////////////////////////////////////////////////////////
+    // Get Next Element Sibling, Get Last Element Sibling
+
+    function getnextElementSibling(element) {
+        if (element.nextElementSibling) {
+            return element.nextElementSibling;
+        }
+
+        var current = element.nextSibling;
+        while (current && current.nodeType !== 1) {
+            current = current.nextSibling;
+        }
+        return current;
+    }
+
+    function getpreviousElementSibling(element) {
+        if (element.previousElementSibling) {
+            return element.previousElementSibling;
+        }
+
+        var current = element.previousSibling;
+        while (current && current.nodeType !== 1) {
+            current = current.previousSibling;
+        }
+        return current;
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // Class List functions
+
+    function addClass(element, string) {
+        if (element.classList) {
+            return element.classList.add(string);
+        }
+
+        var list = element.className.split(' '),
+            i,
+            notpresent = true;
+
+        for (i = 0; i < list.length; i++) {
+            if (list[i] === string) {
+                notpresent = false;
+                break;
+            }
+        }
+        if (notpresent) {
+            element.className += (element.className ? ' ' : '') + string;
+        }
+    }
+
+    function removeClass(element, string) {
+        if (element.classList) {
+            return element.classList.remove(string);
+        }
+
+        var list = element.className.split(' '),
+            i;
+
+        element.className = '';
+
+        for (i = 0; i < list.length; i++) {
+            if (list[i] !== string) {
+                element.className += (element.className ? ' ' : '') + list[i];
+            }
+        }
+    }
+
+    function containsClass(element, string) {
+        if (element.classList) {
+            return element.classList.contains(string);
+        }
+
+        var list = element.className.split(' '),
+            i,
+            present = false;
+
+        for (i = 0; i < list.length; i++) {
+            if (list[i] === string) {
+                present = true;
+                break;
+            }
+        }
+        return present;
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////
+    // Image gallery
+
+    function boximage(idboximage, classbox, classactive) {
+        var list, i,
+            box = document.createElement('div'),
+            boxloading = 'js-boxloading';
+        box.className = classbox;
+
+        list = document.getElementById(idboximage).getElementsByTagName('a');
+        i = list.length;
+        while (i--) {
+            list[i].onclick = function () {
+
+                removeClass(this, classactive);
+
+                if (containsClass(getnextElementSibling(this), classbox)) {
+
+                    box.parentNode.removeChild(box);
+
+                } else {
+
+                    if ((box.parentNode !== null) && (box.parentNode.nodeName !== '#document-fragment')) {
+                        removeClass(getpreviousElementSibling(box), classactive);
+                    }
+                    addClass(this, classactive);
+
+                    removeClass(box, boxloading);
+
+                    box.innerHTML = '<div>' + this.getAttribute('title') + '</div><img src="' + this.getAttribute('href') + '">';
+
+                    setTimeout(function () {
+                        addClass(box, boxloading);
+                    }, 500);
+
+                    this.parentNode.insertBefore(box, getnextElementSibling(this));
+
+                    var this_height = this.getBoundingClientRect().height,
+                        box_height = box.getBoundingClientRect().height,
+                        box_bottom = box.getBoundingClientRect().bottom,
+                        client_height = document.documentElement.clientHeight;
+
+                    if ((this.getBoundingClientRect().top < 0) || ((box_bottom > client_height) && ((this_height + box_height) > client_height))) {
+                        this.scrollIntoView();
+                    } else if ((box_bottom > client_height) && ((this_height + box_height) < client_height)) {
+                        box.scrollIntoView(false);
+                    }
+
+                }
+
+                var e = event || window.event;
+                if (e.preventDefault) {
+                    e.preventDefault();
+                } else {
+                    return false;
+                }
+            };
+        }
+    }
+
+    boximage('boximage', 'box', 'arrow');
+
+}());
+
+			</script>
+			<script src="js/javascript.js"></script>
+</body>
+</html>
