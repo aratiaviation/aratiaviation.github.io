@@ -108,9 +108,10 @@
 										
 							<div class="row">			<!-- Form -->
 							<section>
-								
+								<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"     
+onload="if(submitted) {window.location='thank.html';}"></iframe>
 								<h3>Form</h3>
-								<form method="post" action="https://docs.google.com/forms/d/e/1FAIpQLSfeF1p2o52LKaM0NioAISl_u1SYMiPcFEZkW6KfoeElkiQK6w/formResponse" id="mG61Hd">
+								<form onsubmit="submitted=true;" target="hidden_iframe" method="post" action="https://docs.google.com/forms/d/e/1FAIpQLSfeF1p2o52LKaM0NioAISl_u1SYMiPcFEZkW6KfoeElkiQK6w/formResponse" id="mG61Hd">
 									<div class="row uniform 100%">
 										<div class="6u 12u$(xsmall)">
 											<input type="text" name="entry.2005620554" id="name" value="" placeholder="Name" />
@@ -159,6 +160,7 @@
 							<span class="icon alt fa-phone-square">&nbsp 9875448232</span><br>
 							<span class="icon alt fa-envelope">&nbsp support@aratiaviation.com</span>
 							<br>
+							
 							<h3>Office Address</h3>
 							<address>23 Baisnab Para Cross Road, Garifa, Naihati, West Bangal, 743166</address>
 							<br>
